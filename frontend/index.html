@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SuSoft.com: productos tecnológicos, accesorios y servicios para tu computador.">
+    <title>SuSoft.com | Tecnología para todos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="top-bar">
+        🚀 Tecnología, accesorios y soluciones para tu computador
+    </div>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-icon">S</span>
+            <span>SuSoft<span class="logo-dot">.com</span></span>
+        </a>
+
+        <nav class="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="cart-button" id="cart-button" aria-label="Ver carrito">
+            🛒 Mi carrito <span id="cart-count">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">💜 TU MUNDO, MÁS TECNOLÓGICO</span>
+                <h1>La tecnología que necesitas, <span>en un solo lugar.</span></h1>
+                <p>
+                    Encuentra accesorios, componentes y soluciones tecnológicas
+                    para llevar tu experiencia al siguiente nivel.
+                </p>
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-primary">Explorar productos ↗</a>
+                    <a href="#servicios" class="btn btn-light">Nuestros servicios</a>
+                </div>
+                <div class="hero-points">
+                    <span>✓ Atención personalizada</span>
+                    <span>✓ Soluciones tecnológicas</span>
+                </div>
+            </div>
+
+            <div class="hero-art" aria-label="Ilustración tecnológica">
+                <div class="art-glow"></div>
+                <div class="floating-card card-one">🎧<span>Audio</span></div>
+                <div class="floating-card card-two">⌨️<span>Accesorios</span></div>
+                <div class="device-card">
+                    <div class="device-screen">
+                        <span class="screen-symbol">S</span>
+                        <span class="screen-line"></span>
+                        <span class="screen-line short"></span>
+                    </div>
+                    <div class="device-base"></div>
+                </div>
+                <div class="hero-badge">TECH<br><strong>2026</strong></div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <article><span>💻</span><div><strong>Accesorios</strong><small>Para tu equipo</small></div></article>
+            <article><span>🧩</span><div><strong>Componentes</strong><small>Mejora tu PC</small></div></article>
+            <article><span>🛠️</span><div><strong>Servicio técnico</strong><small>Soluciones para ti</small></div></article>
+            <article><span>💬</span><div><strong>Atención cercana</strong><small>Estamos para ayudarte</small></div></article>
+        </section>
+
+        <section class="products-section section" id="productos">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">NUESTRO CATÁLOGO</span>
+                    <h2>Explora nuestros <span>productos</span></h2>
+                    <p>Encuentra lo que necesitas para tu espacio tecnológico.</p>
+                </div>
+                <div class="search-box">
+                    <span>🔎</span>
+                    <input id="search-input" type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+                </div>
+            </div>
+
+            <div class="categories" id="categories">
+                <button class="category active" data-category="Todos">✨ Todos</button>
+                <button class="category" data-category="Accesorios">🎧 Accesorios</button>
+                <button class="category" data-category="Componentes">🧩 Componentes</button>
+                <button class="category" data-category="Almacenamiento">💾 Almacenamiento</button>
+                <button class="category" data-category="Periféricos">⌨️ Periféricos</button>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <p class="loading">Cargando catálogo...</p>
+            </div>
+            <p class="catalog-note">Los productos y precios mostrados son de demostración para el MVP académico.</p>
+        </section>
+
+        <section class="services-section section" id="servicios">
+            <div class="section-heading centered">
+                <span class="eyebrow">MÁS QUE UNA TIENDA</span>
+                <h2>También cuidamos <span>tu computador</span></h2>
+                <p>Servicios tecnológicos pensados para ayudarte.</p>
+            </div>
+
+            <div class="service-grid">
+                <article class="service-card service-purple">
+                    <div class="service-icon">🧹</div>
+                    <h3>Limpieza y mantenimiento</h3>
+                    <p>Mantenimiento preventivo para ayudar a conservar tu equipo en buenas condiciones.</p>
+                    <a href="#contacto">Consultar servicio ↗</a>
+                </article>
+                <article class="service-card service-blue">
+                    <div class="service-icon">💿</div>
+                    <h3>Sistema operativo y software</h3>
+                    <p>Orientación para instalación y configuración de software compatible.</p>
+                    <a href="#contacto">Consultar servicio ↗</a>
+                </article>
+                <article class="service-card service-orange">
+                    <div class="service-icon">🔧</div>
+                    <h3>Instalación de componentes</h3>
+                    <p>Asesoría para actualizar o reemplazar componentes de tu computador.</p>
+                    <a href="#contacto">Consultar servicio ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div>
+                <span class="eyebrow">¿NECESITAS AYUDA?</span>
+                <h2>Hablemos de tecnología.</h2>
+                <p>Cuéntanos qué producto buscas o qué necesita tu computador.</p>
+            </div>
+            <a class="btn btn-light" href="https://wa.me/" target="_blank" rel="noopener noreferrer">💬 Contactar por WhatsApp</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#inicio" class="logo">
+            <span class="logo-icon">S</span>
+            <span>SuSoft<span class="logo-dot">.com</span></span>
+        </a>
+        <p>Tu mundo, más tecnológico. 💜</p>
+        <small>© 2026 SuSoft.com · Proyecto académico MVP</small>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <dialog class="cart-dialog" id="cart-dialog">
+        <div class="dialog-header">
+            <div>
+                <span class="eyebrow">TU COMPRA</span>
+                <h2>Mi carrito 🛒</h2>
+            </div>
+            <button class="close-button" id="close-cart" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-total">
+            <span>Total estimado</span>
+            <strong id="cart-total">$0</strong>
+        </div>
+        <p class="cart-disclaimer">Carrito demostrativo. Todavía no procesa pagos ni pedidos reales.</p>
+    </dialog>
+</body>
+</html>
