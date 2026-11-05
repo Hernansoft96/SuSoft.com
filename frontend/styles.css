@@ -68,26 +68,21 @@ button {
     border-bottom: 1px solid var(--border);
 }
 
+
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 23px;
-    font-weight: 700;
-    white-space: nowrap;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
-.logo-icon {
-    display: grid;
-    place-items: center;
-    width: 39px;
-    height: 39px;
-    border-radius: 13px;
-    color: white;
-    background: linear-gradient(135deg, #7148ed, #b34fe4);
-    box-shadow: 0 6px 15px #7047eb35;
+.logo img {
+    display: block;
+    width: 170px;
+    height: auto;
+    object-fit: contain;
 }
+
 
 .logo-dot {
     color: var(--purple);
@@ -1023,4 +1018,15 @@ button {
         align-items: flex-start;
         flex-direction: column;
     }
+}
+
+/* Logo principal del banner */
+.hero-logo {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    margin-bottom: 18px;
 }
