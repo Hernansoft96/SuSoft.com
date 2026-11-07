@@ -9,7 +9,7 @@ const products = [
         name: "Audífonos inalámbricos",
         category: "Accesorios",
         price: 89900,
-        emoji: "🎧",
+        image: "img/productos/audifonos gamer.png",
         tag: "Popular",
         description: "Audio para estudiar, trabajar y disfrutar."
     },
@@ -18,7 +18,7 @@ const products = [
         name: "Teclado mecánico RGB",
         category: "Periféricos",
         price: 159900,
-        emoji: "⌨️",
+        image: "img/productos/teclado gamer.png",
         tag: "Destacado",
         description: "Comodidad y estilo para tu escritorio."
     },
@@ -27,7 +27,7 @@ const products = [
         name: "Mouse gamer",
         category: "Periféricos",
         price: 69900,
-        emoji: "🖱️",
+        image: "img/productos/mouse gamer.png",
         tag: "Favorito",
         description: "Precisión para tus tareas y juegos."
     },
@@ -36,16 +36,16 @@ const products = [
         name: "Memoria RAM 8 GB",
         category: "Componentes",
         price: 109900,
-        emoji: "🧩",
+        image: "img/productos/ram rgb.png",
         tag: "Componente",
         description: "Una opción para ampliar la memoria del equipo."
     },
     {
         id: 5,
-        name: "Unidad SSD 480 GB",
+        name: "Unidad SSD 512 GB",
         category: "Almacenamiento",
         price: 179900,
-        emoji: "💾",
+        image: "img/productos/disco solido.png",
         tag: "Recomendado",
         description: "Almacenamiento para tus archivos y programas."
     },
@@ -54,7 +54,7 @@ const products = [
         name: "Cámara web HD",
         category: "Accesorios",
         price: 79900,
-        emoji: "📷",
+        image: "img/productos/camara para computador.png",
         tag: "Para estudiar",
         description: "Ideal para videollamadas y reuniones virtuales."
     },
@@ -63,7 +63,7 @@ const products = [
         name: "Ventilador para PC",
         category: "Componentes",
         price: 45900,
-        emoji: "🌀",
+        image: "img/productos/ventilador rgb.png",
         tag: "Refrigeración",
         description: "Un componente para ayudar al flujo de aire."
     },
@@ -72,7 +72,7 @@ const products = [
         name: "Memoria USB 64 GB",
         category: "Almacenamiento",
         price: 34900,
-        emoji: "🔌",
+        image: "img/productos/usb.png",
         tag: "Práctico",
         description: "Transporta documentos y archivos."
     }
@@ -177,8 +177,12 @@ function renderProducts() {
         <article class="product-card">
 
             <div class="product-art">
-                <span class="product-tag">${product.tag}</span>
-                <span class="product-emoji" aria-hidden="true">${product.emoji}</span>
+            <span class="product-tag">${product.tag}</span>
+            ${
+            product.image
+            ? `<img src="${product.image}" alt="${product.name}" class="product-image">`
+            : `<span class="product-emoji" aria-hidden="true">${product.emoji}</span>`
+            }
             </div>
 
             <div class="product-info">
