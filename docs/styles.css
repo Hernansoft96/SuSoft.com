@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
@@ -527,12 +526,31 @@ button {
 
 .product-art {
     position: relative;
-    min-height: 175px;
-    display: grid;
-    place-items: center;
+    width: 100%;
+    height: 210px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     background:
         radial-gradient(circle, rgba(57, 255, 120, 0.16), transparent 65%),
         #142119;
+}
+
+/* Todas las imágenes del catálogo */
+.product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.product-card:hover .product-image {
+    transform: scale(1.06);
 }
 
 .product-tag {
@@ -877,6 +895,44 @@ button {
     color: var(--green);
 }
 
+/* BOTÓN CONFIRMAR PEDIDO */
+
+.cart-dialog .checkout-button {
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px 20px;
+
+    border: 1px solid var(--green);
+    border-radius: 12px;
+
+    background: var(--green);
+    color: var(--black);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cart-dialog .checkout-button:hover {
+    background: var(--green-soft);
+    border-color: var(--green-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(57, 255, 120, 0.35);
+}
+
+.cart-dialog .checkout-button:active {
+    transform: scale(0.98);
+}
+
+.cart-dialog .checkout-button:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+}
+
 .cart-disclaimer {
     margin-top: 15px;
     color: var(--muted);
@@ -1011,7 +1067,7 @@ button {
     }
 
     .product-art {
-        min-height: 190px;
+         height: 190px;
     }
 
     .service-grid {
@@ -1347,4 +1403,386 @@ button {
         padding: 9px 11px;
         font-size: 0.78rem;
     }
+}
+/* ======================================
+   IMÁGENES DEL CARRITO
+====================================== */
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.cart-row-image {
+    width: 100px;
+    height: 85px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #101b14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-row-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.cart-row-info {
+    min-width: 0;
+}
+
+.cart-row-info strong {
+    display: block;
+    overflow-wrap: break-word;
+}
+
+.cart-row-info small {
+    display: block;
+    margin-top: 5px;
+}
+
+.cart-row .remove-button {
+    white-space: nowrap;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 480px) {
+
+    .cart-row {
+        grid-template-columns: 75px minmax(0, 1fr) auto;
+        gap: 8px;
+    }
+
+    .cart-row-image {
+        width: 75px;
+        height: 75px;
+    }
+
+}
+
+/* ======================================
+   MENÚ DE USUARIO
+====================================== */
+
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-menu[hidden],
+.user-dropdown[hidden] {
+    display: none !important;
+}
+
+.user-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid #dce9df;
+    border-radius: 12px;
+    background: #f0f8f1;
+    color: #176b35;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-menu-button:hover {
+    background: #e1f2e4;
+    border-color: #a8d5b2;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d5efda;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 220px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8e3;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+.user-dropdown-title {
+    padding: 8px 10px;
+    margin: 0;
+    color: #176b35;
+    font-weight: 700;
+}
+
+.user-dropdown button {
+    width: 100%;
+    padding: 11px 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #333333;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.user-dropdown button:hover {
+    background: #f0f8f1;
+}
+
+.user-dropdown .logout-button {
+    color: #dc2626;
+    border-top: 1px solid #eeeeee;
+    border-radius: 0 0 8px 8px;
+    margin-top: 5px;
+    padding-top: 14px;
+}
+
+
+/* ======================================
+   MIS PEDIDOS - DISEÑO FUTURISTA
+====================================== */
+
+/* Ventana principal */
+#orders-dialog {
+    width: min(650px, calc(100% - 30px));
+    max-height: 85vh;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--green);
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(57, 255, 120, 0.10),
+            transparent 55%
+        ),
+        var(--dark);
+    color: var(--white);
+    box-shadow: 0 0 45px rgba(57, 255, 120, 0.15);
+}
+
+/* Fondo oscuro detrás de la ventana */
+#orders-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(7px);
+}
+
+/* Encabezado centrado */
+#orders-dialog .dialog-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+#orders-dialog .dialog-header .eyebrow {
+    color: var(--green);
+    letter-spacing: 2px;
+}
+
+#orders-dialog .dialog-header h2 {
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+}
+
+/* Botón para cerrar */
+#orders-dialog .close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Lista de pedidos */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+/* Tarjetas de pedidos */
+.order-card {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(145deg, #142119, #0b120d);
+    color: var(--white);
+    transition: 0.25s ease;
+}
+
+.order-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 0 20px rgba(57, 255, 120, 0.10);
+}
+
+/* Encabezado de cada pedido */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.order-header strong {
+    color: var(--green);
+    font-size: 15px;
+}
+
+/* Estado del pedido */
+.order-status {
+    padding: 6px 11px;
+    border: 1px solid var(--green);
+    border-radius: 20px;
+    background: rgba(57, 255, 120, 0.10);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Fecha */
+.order-date {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* Productos del pedido */
+.order-products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.order-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.order-product span {
+    color: var(--white);
+    font-size: 14px;
+}
+
+.order-product small {
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* Total */
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    color: var(--white);
+}
+
+.order-total strong {
+    color: var(--green);
+    font-size: 17px;
+}
+
+/* Mensaje cuando no existen pedidos */
+#orders-dialog .empty-results {
+    padding: 35px 20px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--dark-card);
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 480px) {
+
+    #orders-dialog {
+        padding: 22px 16px;
+    }
+
+    #orders-dialog .dialog-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .order-card {
+        padding: 14px;
+    }
+
+    .order-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-product {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+}
+
+/* ======================================
+   BARRA DE DESPLAZAMIENTO FUTURISTA
+====================================== */
+
+/* Chrome, Edge y otros navegadores */
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #080d0a;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #39ff78,
+        #159447
+    );
+    border: 2px solid #080d0a;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #a5ffbd;
+    box-shadow: 0 0 10px rgba(57, 255, 120, 0.6);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #39ff78 #080d0a;
 }
