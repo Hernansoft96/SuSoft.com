@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,21 +28,56 @@
             <a href="#contacto">Contacto</a>
         </nav>
 
-        <div class="header-actions">
+<div class="header-actions">
 
-            <button type="button" class="login-button" id="login-button">
-                Iniciar sesión
+    <button type="button" class="login-button" id="login-button">
+        Iniciar sesión
+    </button>
+
+    <button type="button" class="register-button" id="register-button">
+        Crear cuenta
+    </button>
+
+    <!-- MENÚ DEL USUARIO -->
+    <div class="user-menu" id="user-menu" hidden>
+
+        <button
+            type="button"
+            class="user-menu-button"
+            id="user-menu-button"
+            aria-expanded="false"
+            aria-controls="user-dropdown"
+        >
+            <span class="user-avatar">👤</span>
+            <span id="user-name">Mi cuenta</span>
+            <span>⌄</span>
+        </button>
+
+        <div class="user-dropdown" id="user-dropdown" hidden>
+
+            <p class="user-dropdown-title">Mi cuenta</p>
+
+            <button type="button" id="profile-button">
+                👤 Mi perfil
             </button>
 
-            <button type="button" class="register-button" id="register-button">
-                Crear cuenta
+            <button type="button" id="orders-button">
+                📦 Mis pedidos
             </button>
 
-            <button type="button" class="cart-button" id="cart-button" aria-label="Ver carrito">
-                🛒 Mi carrito <span id="cart-count">0</span>
+            <button type="button" id="logout-button" class="logout-button">
+                ↪ Cerrar sesión
             </button>
 
         </div>
+
+    </div>
+
+    <button type="button" class="cart-button" id="cart-button" aria-label="Ver carrito">
+        🛒 Mi carrito <span id="cart-count">0</span>
+    </button>
+
+</div>   
 
     </header>
 
@@ -61,7 +95,7 @@
                 >
 
                 <p>
-                    En SuSoft.como encuentra accesorios, componentes y soluciones tecnológicas
+                    En SuSoft.com encuentra accesorios, componentes y soluciones tecnológicas
                     para llevar tu experiencia al siguiente nivel.
                 </p>
 
@@ -195,7 +229,7 @@
             </div>
 
             <p class="catalog-note">
-                Los productos y precios son de pruebas manuales.
+                
             </p>
 
         </section>
@@ -259,13 +293,13 @@
             </div>
 
             <a
-                class="btn btn-light"
-                href="https://wa.me/573107806244"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                📲 Contactar por WhatsApp
-            </a>
+    class="btn btn-light"
+    href="https://wa.me/573107806244?text=%F0%9F%91%8B%20%C2%A1Hola!%20Te%20damos%20la%20bienvenida%20a%20SuSoft.com%20%F0%9F%92%9A%0A%0AGracias%20por%20comunicarte%20con%20nosotros.%20Estamos%20aqui%20para%20ayudarte%20con%20tus%20necesidades%20tecnologicas.%0A%0A%C2%BFEn%20que%20podemos%20ayudarte%20hoy%3F"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    📲 Contactar por WhatsApp
+</a>
 
         </section>
 
@@ -371,6 +405,73 @@
 
     </dialog>
 
+
+<!-- VENTANA DE MI PERFIL -->
+<dialog class="auth-dialog" id="profile-dialog">
+
+    <div class="auth-header">
+        <div>
+            <span class="eyebrow">TU CUENTA</span>
+            <h2>Mi perfil</h2>
+            <p>Consulta tu información personal en SuSoft.com.</p>
+        </div>
+
+        <button
+            type="button"
+            class="close-button"
+            id="close-profile"
+            aria-label="Cerrar"
+        >
+            ✕
+        </button>
+    </div>
+
+    <div class="auth-form">
+
+        <label>Nombre completo</label>
+        <p id="profile-name">Cargando...</p>
+
+        <label>Correo electrónico</label>
+        <p id="profile-email">Cargando...</p>
+
+        <label>Fecha de registro</label>
+        <p id="profile-date">Cargando...</p>
+
+    </div>
+
+</dialog>
+
+<!-- VENTANA MIS PEDIDOS -->
+<dialog class="profile-dialog" id="orders-dialog">
+
+    <div class="dialog-header">
+
+        <div>
+            <span class="eyebrow">TU HISTORIAL</span>
+            <h2>Mis pedidos 📦</h2>
+        </div>
+
+        <button
+            type="button"
+            class="close-button"
+            id="close-orders"
+            aria-label="Cerrar pedidos"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div id="orders-list" class="orders-list">
+
+        <div class="empty-results">
+            <p>Cargando tus pedidos...</p>
+        </div>
+
+    </div>
+
+</dialog>
+
     <!-- VENTANA DE REGISTRO -->
     <dialog class="auth-dialog" id="register-dialog">
 
@@ -465,9 +566,14 @@
             <strong id="cart-total">$0</strong>
         </div>
 
-        <p class="cart-disclaimer">
-            Carrito demostrativo. Todavía no procesa pagos ni pedidos reales.
-        </p>
+       
+    <button type="button" class="checkout-button" id="confirm-order">
+    Confirmar pedido
+    </button>
+
+    <p class="cart-disclaimer">
+    Tu pedido quedará registrado en tu cuenta de SuSoft.com.
+    </p>
 
     </dialog>
 
